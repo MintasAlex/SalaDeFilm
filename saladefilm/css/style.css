@@ -1,0 +1,231 @@
+body{
+	padding-left: 10%;
+	padding-top: 3%;
+
+	background: #DAD299;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #B0DAB9, #DAD299);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #B0DAB9, #DAD299); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+      
+      	
+
+	/*
+	background:
+    	linear-gradient(217deg, rgba(10, 15, 64,.8), rgba(10, 15, 64,0) 70.71%),
+      	linear-gradient(127deg, rgba(53, 10, 64,.8), rgba(53, 10, 64,0) 70.71%),
+      	linear-gradient(336deg, rgba(10, 54, 64,.8), rgba(10, 54, 64,0) 70.71%);
+
+      	linear-gradient(217deg, rgba(163, 0, 125,.8), rgba(163, 0, 125,0) 70.71%),
+      	linear-gradient(336deg, rgba(0, 5, 163,.8), rgba(0, 5, 163,0) 70.71%),
+      	linear-gradient(127deg, rgba(163, 103, 0,.8), rgba(163, 103, 0,0) 70.71%);
+    */
+}
+.banner h1{
+	
+	font-family: "Avenir Next", "Avenir", sans-serif;
+	font-size: 58px;
+}
+.icon img{
+	
+	width: 70%;
+}
+.icon{
+	width: 20%;
+}
+.banner {
+    display: flex;
+    align-items:center;
+    width: 100%;
+    padding-left: 3%;
+}
+.day{
+	display: inline-block;
+	border-style: solid;
+	width: 90%;
+	padding-left: 2%;
+	padding-top: 0%;
+	padding-bottom: 2%;
+	/*background-color: white;
+  	opacity: 0.3; */
+}
+.mv{
+	display: flex;
+	margin-left: 5%;
+	margin-top: 5%;	
+	border-style: solid;
+	width: 90%;
+	height: 10%;
+}
+.mv img{
+	display: flex;
+	width: 15%;
+	padding-left: 2%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+.mvc{
+	display: block;
+	padding-left: 3%;
+}
+}
+.mvc h1{
+	font-size: 24px;
+	margin-bottom: 5px;
+}
+.mvc h2{
+	margin-top: 5px;
+	font-size: 16px;
+}
+.mvc p{
+	padding-top: 15%;
+	font-size: 15px;
+}
+.time{
+	margin-top: 20%;
+}
+
+
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #1c1b18;
+	background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color:#eae0c2;
+	border-radius:15px;
+	border:2px solid #333029;
+	display:inline-block;
+	cursor:pointer;
+	color:#505739;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:12px 16px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+	background-color:#ccc2a6;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.backButton{
+	font-family: Arial;
+  text-decoration: none;
+  font-size: 30px;
+}
+.backButton a:link {
+  text-decoration: none;
+  color: black;
+}
+.backButton a{
+	color: black;
+}
+
+.book{
+	display: flex;
+	border-style: solid;
+	width: 90%;
+	padding-left: 2%;
+	padding-top: 0%;
+	padding-bottom: 2%;
+	margin-top: 4%;
+}
+
+.book img{
+	display: flex;
+	width: 25%;
+	padding-left: 5%;
+	padding-top: 5%;
+	padding-bottom: 2%;	
+}
+
+.book h1{
+	padding-top: 3%;
+	padding-left: 30%;
+	display: block;
+	font-size:4vw;
+	margin-bottom: 5%;
+}
+.book h2{
+	margin-top: 2%;
+	font-size: 16px;
+}
+.book p{
+	padding-top: 2%;
+	font-size: 15px;
+	padding-right: 10%;
+}
+.rezerv{
+	margin-top: 20%;
+}
+
+.rezerv-fr{
+	display: block;
+	border-style: solid;
+	width: 90%;
+	padding-left: 2%;
+	padding-top: 0%;
+	padding-bottom: 2%;
+	margin-top: 4%;
+}
+
+.rezerv-fr h2{
+	text-align: center;
+	font-size: 4vw;
+	width:100%;
+	display: block;
+}
+
+.rezerv-fr form{
+	padding-top: 10%;
+	padding-left: 0%;
+	display: block;
+}
+
+p.thick {
+  font-weight: bold;
+}
+
+
+.book input[type=submit] {
+	position: relative;
+	top: 60px;
+    left: -25%;
+	box-shadow:inset 0px 1px 0px 0px #1c1b18;
+	background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color:#eae0c2;
+	border-radius:15px;
+	border:2px solid #333029;
+	display:inline-block;
+	cursor:pointer;
+	color:#505739;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:12px 16px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.book input[type=submit]:hover {
+	background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+	background-color:#ccc2a6;
+}
+.book input[type=submit]:active {
+	position:relative;
+	position: relative;
+	top: 61px;
+    left: -25%;
+}
+
+table{
+	text-align: center;
+	margin-left: 16.5%;
+	width:60%;
+}
+
+
+
+
+
