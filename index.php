@@ -8,18 +8,18 @@
 	</head> 
 	<body>
 
-	<?php
+<!-- 	<?php
 	include 'db_connection.php';
 	$conn = OpenCon();
 	//echo "Connected Successfully";
 	CloseCon($conn);
-	?>
+	?> -->
 
-	<?php
+<!-- 	<?php
     $link = mysqli_connect("localhost", "root", "", "saladefilm");
     $sql = "SELECT * FROM FILM";
 
-    ?>
+    ?> -->
 
 	<!--Div bg ?? -->
 		<div class="banner"> 
@@ -35,7 +35,7 @@
 		<div class="day">
 
 			
-			<?php
+			<!-- <?php
 
 			if($result = mysqli_query($link, $sql)){
                             if(mysqli_num_rows($result) > 0){
@@ -68,7 +68,7 @@
 
             
 		</div>
-
+ -->
 	
 		
 
