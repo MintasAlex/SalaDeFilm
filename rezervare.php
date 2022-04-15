@@ -27,7 +27,7 @@
 		?>
 
 		<?php
-		    $link = mysqli_connect("localhost", "root", "", "saladefilm");
+		     $link = mysqli_connect("eu-cdbr-west-02.cleardb.net", "bf17231366db58", "244fc2b2", "heroku_ac4c3e4e4267083");
 		    $sql = "SELECT * FROM FILM WHERE (id = $movId)";
 	    ?>
 
