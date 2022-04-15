@@ -8,91 +8,134 @@
 	</head> 
 	<body>
 	<!--Div bg ?? -->
-		
-		<?php
-			class Movie {
-				public $id, $nume, $durata, $tip, $nota, $genuri, $imagine, $rating, $descriere;
-				function __construct($id, $nume, $durata, $tip, $nota, $genuri, $imagine, $rating, $descriere) {
-					$this->id = $id;
-					$this->nume = $nume;
-					$this->durata = $durata;
-					$this->tip = $tip;
-					$this->nota = $nota;
-					$this->genuri = $genuri; 
-					$this->imagine = $imagine;
-					$this->rating = $rating;
-					$this->descriere = $descriere;
-				}					
-
-				function get_id() {
-					return $this->id;
-				}
-	
-				function get_nume() {
-					return $this->nume;
-				}
-	
-				function get_durata() {
-					return $this->durata;
-				}
-	
-				function get_tip() {
-					return $this->tip;
-				}
-	
-				function get_nota() {
-					return $this->nota;
-				}
-	
-				function get_genuri() {
-					return $this->genuri;
-				}
-	
-				function get_imagine() {
-					return $this->imagine;
-				}
-	
-				function get_rating() {
-					return $this->rating;
-				}
-	
-				function get_descriere() {
-					return $this->descriere;
-				}
-			}
-
-			
-
-			$mv[1] = new Movie(1,"Tennet","2h 30min","2D","7.7","Actiune, Sci-Fi","img/movie-poster-1.jpg","PG-13","„Tenet\", semnat de Christopher Nolan, este o poveste epică a cărei acțiune debutează în lumea spionajului internațional.\nÎnarmat cu un singur cuvânt - Tenet - şi luptând pentru supraviețuirea întregii lumi, Protagonistul călătoreşte printr-o lume crepusculară a spionajului internaţional, într-o misiune a cărei acţiune se va desfăşura dincolo de timpul real. Nu călătorie în timp. Inversiune.");
-			$mv[2] = new Movie(2,"Hard Kill","1h 38min","3D","4.1","Actiune, Thriller","img/movie-poster-2.jpg","R","Opera lui Donovan Chalmers, CEO al unui gigant tehnologic, este atât de importantă încât se vede nevoit să angajeze mercenari pentru a o proteja. O grupare teroristă, însă, îi răpește fiica pentru a-i forța mâna.");
-			$mv[3] = new Movie(3,"The New Mutants","1h 34min","2D","5.3","Actiune, Horror, Sci-fi","img/movie-poster-3.jpg","PG-13","„Cinci tineri mutanţi, care abia îşi descoperă abilităţile în vreme ce sunt ţinuţi închişi într-o instituţie secretă, încearcă să se salveze, dar şi să se lepede de păcatele comise în trecut.");
-			$mv[4] = new Movie(4,"Run","1h 30min","3D","6.7","Horror, Mister, Thriller","img/movie-poster-4.jpg","PG-13","„Se spune că de dragostea unei mame nu ai cum să scapi, dar, pentru Chloe, asta nu e o alinare, ci o... amenințare.\nÎn relația lui Chloe (debutanta Kiera Allen) cu mama sa, Diane (Sarah Paulson) e ceva nefiresc, ba chiar sinistru... Diane a crescut-o pe fiica sa în izolare completă, controlându-i fiecare mișcare de când s-a născut, dar acum Chloe a început să suspecteze că exagerat de protectoarea ei mamă îi ascunde ceva.\nScenariștii, producătorii și regizorul care au realizat filmul Căutarea ne prezintă Salvează-mă, un thriller plin de suspans, în care o mamă devine criminal de protectoare cu fiica ei.");
-			$mv[5] = new Movie(5,"The Trial of the Chicago 7","2h 9min","2D","7.9","Drama, Istorie, Thriller","img/movie-poster-5.jpg","R","„Ceea ce trebuia să fie un protest pașnic la Convenția Națională a Partidului Democrat din 1968 s-a transformat într-o confruntare violentă cu poliția și Garda Națională. Organizatorii protestului, printre care Abbie Hoffman, Jerry Rubin, Tom Hayden și Bobby Seale, au fost acuzați de conspirație în vederea incitării la revoltă, iar procesul care a urmat a fost unul dintre cele mai notorii din istorie.");
-
-				
-		?>
-
 		<?php
 			//Using GET
 			$movId = $_GET['movId'];
-			
-			$movId = $mv[$movId];
+
 			//echo $movId;
 		?>
+		<!--
+		<?php
+			$locuri = array("A1","A2","A3","A4","A5","A6","A7","A8","A9","A10","B1","B2","B3","B4","B5","B6","B7","B8","B9","B10","C1","C2","C3","C4","C5","C6","C7","C8","C9","C10","D1","D2","D3","D4","D5","D6","D7","D8","D9","D10","E1","E2","E3","E4","E5","E6","E7","E8","E9","E10","F1","F2","F3","F4","F5","F6","F7","F8","F9","F10","G1","G2","G3","G4","G5","G6","G7","G8","G9","G10","H1","H2","H3","H4","H5","H6","H7","H8","H9","H10","I1","I2","I3","I4","I5","I6","I7","I8","I9","I10","J1","J2","J3","J4","J5","J6","J7","J8","J9","J10");
+			
+		?>
+		-->
+		<?php
+		    $link = mysqli_connect("localhost", "root", "", "saladefilm");
+		    $sql = "SELECT * FROM FILM WHERE (id = $movId)";
+	    ?>
+	    <!--
+	    <?php
+			$nameErr = $emailErr = $locErr = "";
+			$name = $email = $loc = "";
+
+			if ($_SERVER["REQUEST_METHOD"] == "POST") {
+				if (empty($_POST["name"])) {
+					$nameErr = "Name is required";
+					} else {
+						$name = test_input($_POST["name"]);
+						// check if name only contains letters and whitespace
+						if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+								$nameErr = "Only letters and white space allowed";
+								}
+							}
+											  
+				if (empty($_POST["email"])) {
+					$emailErr = "Email is required";
+					} else {
+						$email = test_input($_POST["email"]);
+						// check if e-mail address is well-formed
+						if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+								$emailErr = "Invalid email format";
+								}
+							}
+											    
+				if (empty($_POST["loc"])) {
+					$locErr = "Loc is required";
+					} 
+				
+											  
+			}	    	
+	    ?>
+		-->
 
 		<div class="backButton">
 			<a href="index.php"> < Inapoi </a>
 		</div>
 		<div class="book">
-			<?php			
-				echo '<img src="'.$movId->get_imagine().'">';
-				echo '<div class="mvc">';
-					echo '<h1>'.$movId->get_nume().'</h1>';					
-					echo '<h2>'.$movId->get_tip().'&nbsp;&nbsp;&nbsp;'.$movId->get_nota().'&nbsp;&nbsp;&nbsp;'.$movId->get_rating().'&nbsp;&nbsp;&nbsp;'.$movId->get_durata().'</h2>';
-					echo '<p class="thick">Genuri: '.$movId->get_genuri().'</p>';
-					echo '<p>Descriere:<br>'.$movId->get_descriere().'</p>';
-				echo '</div>';
-			?>		                                                              
+
+			<?php
+			
+			if($result = mysqli_query($link, $sql)){
+                          if(mysqli_num_rows($result) > 0){
+                            	$row_cnt = $result->num_rows;
+                                // $i = $movId; 
+                                    $row = mysqli_fetch_array($result);
+										echo '<img src="'.$row['imagine'].'">';
+										echo '<div class="mvc">';
+											echo '<h1>'.$row['nume'].'</h1>';
+											
+											echo '<h2>'.$row['tip'].'&nbsp;&nbsp;&nbsp;'.$row['nota'].'&nbsp;&nbsp;&nbsp;'.$row['rating'].'&nbsp;&nbsp;&nbsp;'.$row['durata'].'</h2>';
+											echo '<p class="thick">Genuri: '.$row['genuri'].'</p>';
+											echo '<p>Descriere:<br>'.$row['descriere'].'</p>';
+											
+											
+											$sql1 = "SELECT * FROM Afisare WHERE (film_id = $movId) ORDER BY DATA";
+											if($result1 = mysqli_query($link, $sql1)){
+					                          if(mysqli_num_rows($result1) > 0){
+					                            	$row_cnt1 = $result1->num_rows;
+
+					                            
+					                        echo'<form action="rezervare.php?movId='.$movId.'" method="post">';
+					                        echo'<label for="afisare">Alege o afisare:  </label>';
+											echo'<select name="afisare" required>';
+							                        echo'<option value="" disabled selected>Afisare</option>';
+							                        for ($i = 0; $i < $row_cnt1; $i++){
+							                        	$row1 = mysqli_fetch_array($result1);
+							                        echo $row1['afisare.id'];
+							                        echo '<option value="'.$row1['id'].'">'.$row1['data'].' '.$row1['ora'].'</option>';
+							                    }
+
+							                    echo'<p><input type="submit" value="Confirma"/></p>';
+												echo'</form>';}}
+												mysqli_free_result($result1);
+
+
+											/*
+											echo '<div class="rezerv">';
+											
+												
+												echo'<form action="action.php" method="post">';
+												echo'<p>Your name: <input type="text" name="name" /></p>';
+												echo'<p>Your age: <input type="text" name="age" /></p>';
+												echo'<select name="loc" required>';
+							                        echo'<option value="" disabled selected>LOC</option>';
+							                        for ($i = 0; $i < 99; $i++){
+							                        echo '<option value="'.$locuri[$i].'">'.$locuri[$i].'</option>';}  
+							                    echo'</select>';
+												 echo'<p><input type="submit" /></p>';
+												echo'</form>';
+
+												
+											  	
+
+											echo '</div>';
+											*/
+											//echo'<a href="rezervare.php?movId='.$row['id'].'" class="myButton">Rezerva un bilet</a>';
+										echo'</div>';
+									
+								
+                                mysqli_free_result($result);
+                            
+                            }
+                        }
+                        
+                        
+                        // Close connection
+                        mysqli_close($link);
+                        ?>
+
+                        
 		</div>
 	<br>
 
