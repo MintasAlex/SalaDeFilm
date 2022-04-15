@@ -37,7 +37,7 @@ CREATE TABLE film (
     tip       CHAR(10) NOT NULL,
     nota      CHAR(10) NOT NULL,
     genuri    CHAR(100) NOT NULL,
-    imagine   BLOB,
+    imagine   CHAR(1000),
     rating    CHAR(10) NOT NULL
 );
 
@@ -51,7 +51,7 @@ CREATE TABLE rezervare (
     client_id1   INTEGER NOT NULL
 );
 
-INSERT INTO `Film` (`ID`, `nume`, `durata`, `tip`, `nota`, `genuri`, `RATING`) VALUES
+INSERT INTO film (ID, nume, durata, tip, nota, genuri, RATING) VALUES
 (1, 'Tenet', '2h 30min', '2D', '7.7', 'Actiune, Sci-Fi', 'PG-13'),
 (2, 'Hard Kill', '1h 38min', '3D', '4.1', 'Actiune, Thriller', 'R'),
 (3, 'The New Mutants', '1h 34min', '2D', '5.3', 'Actiune, Horror, Sci-fi', 'PG-13'),

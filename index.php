@@ -12,18 +12,31 @@
 	<body>
 
 	<?php
-			class Movie {
-				public $id, $nume, $durata, $tip, $nota, $genuri, $imagine, $rating, $descriere;
-				function __construct($id, $nume, $durata, $tip, $nota, $genuri, $imagine, $rating, $descriere) {
-					$this->id = $id;
-					$this->nume = $nume;
-					$this->durata = $durata;
-					$this->tip = $tip;
-					$this->nota = $nota;
-					$this->genuri = $genuri; 
-					$this->imagine = $imagine;
-					$this->rating = $rating;
-					$this->descriere = $descriere;
+	include 'db_connection.php';
+	$conn = OpenCon();
+	//echo "Connected Successfully";
+	CloseCon($conn);
+	?>
+
+	<?php
+
+		// Connect to the database
+		$db = mysqli_connect('eu-cdbr-west-02.cleardb.net', 'bf17231366db58', '244fc2b2', 'heroku_ac4c3e4e4267083');
+		$sql = "SELECT * FROM FILM";
+
+		/*
+		class Movie {
+			public $id, $nume, $durata, $tip, $nota, $genuri, $imagine, $rating, $descriere;
+			function __construct($id, $nume, $durata, $tip, $nota, $genuri, $imagine, $rating, $descriere) {
+				$this->id = $id;
+				$this->nume = $nume;
+				$this->durata = $durata;
+				$this->tip = $tip;
+				$this->nota = $nota;
+				$this->genuri = $genuri; 
+				$this->imagine = $imagine;
+				$this->rating = $rating;
+				$this->descriere = $descriere;
 				}					
 
 				function get_id() {
@@ -70,7 +83,7 @@
 			$mv[3] = new Movie(3,"The New Mutants","1h 34min","2D","5.3","Actiune, Horror, Sci-fi","img/movie-poster-3.jpg","PG-13","„Cinci tineri mutanţi, care abia îşi descoperă abilităţile în vreme ce sunt ţinuţi închişi într-o instituţie secretă, încearcă să se salveze, dar şi să se lepede de păcatele comise în trecut.");
 			$mv[4] = new Movie(4,"Run","1h 30min","3D","6.7","Horror, Mister, Thriller","img/movie-poster-4.jpg","PG-13","„Se spune că de dragostea unei mame nu ai cum să scapi, dar, pentru Chloe, asta nu e o alinare, ci o... amenințare.\nÎn relația lui Chloe (debutanta Kiera Allen) cu mama sa, Diane (Sarah Paulson) e ceva nefiresc, ba chiar sinistru... Diane a crescut-o pe fiica sa în izolare completă, controlându-i fiecare mișcare de când s-a născut, dar acum Chloe a început să suspecteze că exagerat de protectoarea ei mamă îi ascunde ceva.\nScenariștii, producătorii și regizorul care au realizat filmul Căutarea ne prezintă Salvează-mă, un thriller plin de suspans, în care o mamă devine criminal de protectoare cu fiica ei.");
 			$mv[5] = new Movie(5,"The Trial of the Chicago 7","2h 9min","2D","7.9","Drama, Istorie, Thriller","img/movie-poster-5.jpg","R","„Ceea ce trebuia să fie un protest pașnic la Convenția Națională a Partidului Democrat din 1968 s-a transformat într-o confruntare violentă cu poliția și Garda Națională. Organizatorii protestului, printre care Abbie Hoffman, Jerry Rubin, Tom Hayden și Bobby Seale, au fost acuzați de conspirație în vederea incitării la revoltă, iar procesul care a urmat a fost unul dintre cele mai notorii din istorie.");
-
+		*/
 				
 		?>
 
