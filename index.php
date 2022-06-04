@@ -5,6 +5,7 @@
 		<meta name="description" content="SalaDeFilm este un proiect studentesc care a are scopul de a testa functionalitati SEO">
 		<meta name="author" content="Mintas Alex">
 		<meta name="keywords" content="SalaDeFilm, Filme, Heroku">
+		<meta name="robots" content="all">
 		<title>Program</title>
 		<link rel="icon" href="img/icon.png">
 		<link rel="stylesheet" href="css/style.css">
@@ -21,9 +22,8 @@
 	<?php
     $link = mysqli_connect("eu-cdbr-west-02.cleardb.net", "bf17231366db58", "244fc2b2", "heroku_ac4c3e4e4267083");
     $sql = "SELECT * FROM FILM";
-
     ?>
-
+	
 	<!--Div bg ?? -->
 		<div class="banner"> 
 			<div class="icon">
@@ -32,28 +32,20 @@
 			<h1>Filme</h1>
 		</div>
 	<br>
-
-		<!-- Meniu pentru zile -->
-
 		<div class="day">
-
-			
 			<?php
-
 			if($result = mysqli_query($link, $sql)){
                             if(mysqli_num_rows($result) > 0){
                             	$row_cnt = $result->num_rows;
                                 for ($i = 0; $i < $row_cnt; $i++){
                                     $row = mysqli_fetch_array($result);
 									echo '<div class="mv">';
-										echo '<img src="'.$row['imagine'].'">';
+										echo '<img src="'.$row['imagine'].'" alt="Poster '.$row['nume'].'" title="'.$row['nume'].' ">';
 										echo '<div class="mvc">';
-											echo '<h1>'.$row['nume'].'</h1>';
-											echo '<h2>'.$row['tip'].'&nbsp;&nbsp;&nbsp;'.$row['nota'].'&nbsp;&nbsp;&nbsp;'.$row['rating'].'&nbsp;&nbsp;&nbsp;'.$row['durata'].'</h2>';
+											echo '<h2>'.$row['nume'].'</h2>';
+											echo '<h3>'.$row['tip'].'&nbsp;&nbsp;&nbsp;'.$row['nota'].'&nbsp;&nbsp;&nbsp;'.$row['rating'].'&nbsp;&nbsp;&nbsp;'.$row['durata'].'</h3>';
 											echo '<p>'.$row['genuri'].'</p>';
-											echo '<div class="time">';  
-											  	echo'<a href="booking.php?movId='.$row['id'].'" class="myButton">Detalii</a>';
-											echo '</div>';
+											  	echo'<a href="film.php?movId='.$row['id'].'" class="myButton">Detalii</a>';
 										echo'</div>';
 									echo'</div>';
 								}
@@ -68,13 +60,7 @@
                         // Close connection
                         mysqli_close($link);
                         ?>
-
-            
 		</div>
-
-	
-		
-
 	<!--Div bg ?? --> 		
 	</body> 
 </html>

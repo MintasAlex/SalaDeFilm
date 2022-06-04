@@ -1,5 +1,5 @@
 User-Agent: *
-Allow: /
+Dissallow: /action.php
 
-Sitemap: sitemap.xml
+Sitemap: https://sala-de-film.herokuapp.com/sitemap.xml
 

@@ -58,7 +58,8 @@ background: linear-gradient(to right, #B0DAB9, #DAD299); /* W3C, IE 10+/ Edge, F
 }
 .mv img{
 	display: flex;
-	width: 15%;
+	/*width: 15%;*/
+	width: 12em;
 	padding-left: 2%;
 	padding-top: 2%;
 	padding-bottom: 2%;
@@ -67,22 +68,20 @@ background: linear-gradient(to right, #B0DAB9, #DAD299); /* W3C, IE 10+/ Edge, F
 	display: block;
 	padding-left: 3%;
 }
-}
-.mvc h1{
-	font-size: 24px;
+
+.mvc h2{
+	font-size: 1.7em;
 	margin-bottom: 5px;
 }
-.mvc h2{
-	margin-top: 5px;
+.mvc h3{
+	margin-top: 2em;
 	font-size: 16px;
 }
 .mvc p{
-	padding-top: 15%;
+	padding-top: 1.5em;
 	font-size: 15px;
 }
-.time{
-	margin-top: 20%;
-}
+
 
 
 .myButton {
@@ -100,6 +99,8 @@ background: linear-gradient(to right, #B0DAB9, #DAD299); /* W3C, IE 10+/ Edge, F
 	padding:12px 16px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
+	margin-bottom: 5%;
+	margin-top: 2em;
 }
 .myButton:hover {
 	background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
@@ -143,7 +144,7 @@ background: linear-gradient(to right, #B0DAB9, #DAD299); /* W3C, IE 10+/ Edge, F
 
 .book h1{
 	padding-top: 3%;
-	padding-left: 30%;
+	padding-left: 20%;
 	display: block;
 	font-size:4vw;
 	margin-bottom: 5%;
@@ -190,15 +191,13 @@ p.thick {
 
 
 .book input[type=submit] {
-	position: relative;
-	top: 60px;
-    left: -25%;
+	margin-top: 2em;
 	box-shadow:inset 0px 1px 0px 0px #1c1b18;
 	background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
 	background-color:#eae0c2;
 	border-radius:15px;
 	border:2px solid #333029;
-	display:inline-block;
+	display:flex;
 	cursor:pointer;
 	color:#505739;
 	font-family:Arial;
@@ -212,12 +211,14 @@ p.thick {
 	background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
 	background-color:#ccc2a6;
 }
-.book input[type=submit]:active {
+
+/* .book input[type=submit]:active {
 	position:relative;
 	position: relative;
 	top: 61px;
     left: -25%;
-}
+} */
+
 
 table{
 	text-align: center;
@@ -225,7 +226,27 @@ table{
 	width:60%;
 }
 
+@media screen and (max-width: 768px) {
+	.mv img{
+		display: flex;
+		width: 30%;
+		height: auto;
+		padding-left: 2%;
+		padding-top: 2%;
+		padding-bottom: 2%;
+		max-height: 258px
+	}
 
+	.book img{
+		width: 35%;
+		height: 100%;		
+	}
 
+	.book h1{
+		font-size: 6vw;
+	}
 
-
+	.icon img{
+		width: 90%;
+	}
+}
