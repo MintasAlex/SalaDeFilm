@@ -72,7 +72,7 @@
                             	$row_cnt = $result->num_rows;
                                 // $i = $movId; 
                                     $row = mysqli_fetch_array($result);
-										echo '<img src="'.$row['imagine'].'">';
+									echo '<img src="'.$row['imagine'].'" alt="Poster '.$row['nume'].'" title="'.$row['nume'].' ">';
 										echo '<div class="mvc">';
 											echo '<h1>'.$row['nume'].'</h1>';											
 											echo '<h2>'.$row['tip'].'&nbsp;&nbsp;&nbsp;'.$row['nota'].'&nbsp;&nbsp;&nbsp;'.$row['rating'].'&nbsp;&nbsp;&nbsp;'.$row['durata'].'</h2>';
