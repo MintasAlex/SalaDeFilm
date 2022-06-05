@@ -1,14 +1,33 @@
 <!DOCTYPE html> 
+<?php
+	$mc = new Memcached();
+	$mc->setOption(Memcached::OPT_BINARY_PROTOCOL, true);
+	$mc->addServers(array_map(function($server) { return explode(':', $server, 2); }, explode(',', $_ENV['MEMCACHEDCLOUD_SERVERS'])));
+	$mc->setSaslAuthData($_ENV['MEMCACHEDCLOUD_USERNAME'], $_ENV['MEMCACHEDCLOUD_PASSWORD']);
+	session_start();
+	
+?>
 <html lang="en">
 	<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="SalaDeFilm este un proiect studentesc care a are scopul de a testa functionalitati SEO">
+		<meta name="description" content="SalaDeFilm reprezinta un mock-up pentru aplicatiile de cinema. In aceasta pagina sunt prezentate filmele care ruleaza, in prezent, in cinema.">
 		<meta name="author" content="Mintas Alex">
 		<meta name="keywords" content="SalaDeFilm, Filme, Heroku">
 		<meta name="robots" content="all">
-		<title>Program</title>
+		<title>Program Filme - SalaDeFilm</title>
 		<link rel="icon" href="img/icon.png">
 		<link rel="stylesheet" href="css/style.css">
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-HHS5CK4TF2"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-HHS5CK4TF2');
+		</script>
+
 	</head> 
 	<body>
 
@@ -59,6 +78,7 @@
                         
                         // Close connection
                         mysqli_close($link);
+						session_destroy();
                         ?>
 		</div>
 	<!--Div bg ?? --> 		

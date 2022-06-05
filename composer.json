@@ -2,5 +2,9 @@
 	
     "require-dev": {
         "heroku/heroku-buildpack-php": "^205.0"
+    },
+    
+    "require": {
+        "ext-memcached": "*"
     }
 }
