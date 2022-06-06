@@ -2,4 +2,4 @@ DirectoryIndex index.php
 ErrorDocument 404 /404.html
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.sala-de-film\.herokuapp\.com$
-RewriteRule ^/?$ "http\:\/\/sala\-de\-film\.herokuapp\.com\/" [R=301,L]
+RewriteRule ^/?$ "https\:\/\/sala\-de\-film\.herokuapp\.com\/" [R=301,L]
