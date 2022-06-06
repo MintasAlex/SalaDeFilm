@@ -17,6 +17,12 @@
 		<link rel="icon" href="img/icon.png">
 		<link rel="stylesheet" href="css/style.css">
 
+		<!-- Social media meta tags -->
+		<meta property="og:title" content="Program Filme - SalaDeFilm">
+		<meta property="og:description" content="SalaDeFilm reprezinta un mock-up pentru aplicatiile de cinema. In aceasta pagina sunt prezentate filmele care ruleaza, in prezent, in cinema.">
+		<meta property="og:image" content="https://sala-de-film.herokuapp.com/img/icon.png">
+		<meta property="og:url" content="https://sala-de-film.herokuapp.com">
+
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-HHS5CK4TF2"></script>
 		<script>
