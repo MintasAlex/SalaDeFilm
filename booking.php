@@ -61,11 +61,9 @@
 
 
 			<?php
-			//echo '<div class="rezerv-frr">';
 			if($result = mysqli_query($link, $sql)){
                           if(mysqli_num_rows($result) > 0){
                             	$row_cnt = $result->num_rows;
-                                // $i = $movId; 
                                     $row = mysqli_fetch_array($result);}}
 				echo '<h2>'.$row['nume'].'</h2>';
 				

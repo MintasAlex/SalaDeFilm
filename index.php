@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="SalaDeFilm reprezinta un mock-up pentru aplicatiile de cinema. In aceasta pagina sunt prezentate filmele care ruleaza, in prezent, in cinema.">
 		<meta name="author" content="Mintas Alex">
-		<meta name="keywords" content="SalaDeFilm, Filme, Heroku">
+		<meta name="keywords" content="SalaDeFilm, Filme, Heroku, Program">
 		<meta name="robots" content="all">
 		<title>Program Filme - SalaDeFilm</title>
 		<link rel="icon" href="img/icon.png">
@@ -58,33 +58,33 @@
 	<br>
 		<div class="day">
 			<?php
-			if($result = mysqli_query($link, $sql)){
-                            if(mysqli_num_rows($result) > 0){
-                            	$row_cnt = $result->num_rows;
-                                for ($i = 0; $i < $row_cnt; $i++){
-                                    $row = mysqli_fetch_array($result);
-									echo '<div class="mv">';
-										echo '<img src="'.$row['imagine'].'" alt="Poster '.$row['nume'].'" title="'.$row['nume'].' ">';
-										echo '<div class="mvc">';
-											echo '<h2>'.$row['nume'].'</h2>';
-											echo '<h3>'.$row['tip'].'&nbsp;&nbsp;&nbsp;'.$row['nota'].'&nbsp;&nbsp;&nbsp;'.$row['rating'].'&nbsp;&nbsp;&nbsp;'.$row['durata'].'</h3>';
-											echo '<p>'.$row['genuri'].'</p>';
-											  	echo'<a href="film.php?movId='.$row['id'].'" class="myButton">Detalii</a>';
-										echo'</div>';
-									echo'</div>';
-								}
-                                mysqli_free_result($result);
-                            } else{
-                                echo '<h4 class="no-annot">No Booking to our movies right now</h4>';
-                            }
-                        } else{
-                            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-                        }
+		 	if($result = mysqli_query($link, $sql)){
+                if(mysqli_num_rows($result) > 0){
+                    $row_cnt = $result->num_rows;
+                    for ($i = 0; $i < $row_cnt; $i++){
+                    	$row = mysqli_fetch_array($result);
+						echo '<div class="mv">';
+							echo '<img src="'.$row['imagine'].'" alt="Poster '.$row['nume'].'" title="'.$row['nume'].' ">';
+							echo '<div class="mvc">';
+								echo '<h2>'.$row['nume'].'</h2>';
+								echo '<h3>'.$row['tip'].'&nbsp;&nbsp;&nbsp;'.$row['nota'].'&nbsp;&nbsp;&nbsp;'.$row['rating'].'&nbsp;&nbsp;&nbsp;'.$row['durata'].'</h3>';
+								echo '<p>'.$row['genuri'].'</p>';
+								echo'<a href="film.php?movId='.$row['id'].'" class="myButton">Detalii</a>';
+							echo'</div>';
+						echo'</div>';
+					}
+                    mysqli_free_result($result);
+                    } else{
+                        echo '<h4 class="no-annot">No Booking to our movies right now</h4>';
+                    }
+                } else{
+                     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                }
                         
-                        // Close connection
-                        mysqli_close($link);
-						session_destroy();
-                        ?>
+                // Close connection
+                mysqli_close($link);
+				session_destroy();
+            ?>
 		</div>
 	<!--Div bg ?? --> 		
 	</body> 
